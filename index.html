@@ -55,8 +55,8 @@
             border: 2px solid rgba(255, 42, 133, 0.3);
             box-shadow: 0 0 40px rgba(255, 42, 133, 0.3);
             background: 
-                linear-gradient(to bottom, rgba(11, 4, 25, 0.95) 0%, rgba(11, 4, 25, 0.8) 45%, rgba(11, 4, 25, 0.4) 100%),
-                url('poster.jpg') no-repeat center bottom;
+                linear-gradient(to bottom, rgba(11, 4, 25, 0.85) 0%, rgba(11, 4, 25, 0.75) 45%, rgba(11, 4, 25, 0.5) 100%),
+                url('poster.jpg') no-repeat center center;
             background-size: cover;
             display: flex;
             flex-direction: column;
@@ -311,19 +311,34 @@
             width: 100%;
             display: flex;
             flex-direction: column;
-            gap: 4px;
-            font-size: 0.75rem;
-            color: var(--text-dim);
+            gap: 8px;
+            background: #0a0414; /* Solid dark background to block poster text */
+            border: 2px dashed var(--neon-pink);
+            border-radius: 12px;
+            padding: 12px 10px;
             margin: 0;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.8), inset 0 0 15px rgba(255, 42, 133, 0.2);
         }
 
         .note-item {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 6px;
+            gap: 8px;
+            font-size: 0.85rem;
+            font-weight: 900;
+            color: #fff;
+            text-transform: uppercase;
+            text-align: center;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+            letter-spacing: 0.5px;
         }
-        .note-item i { color: var(--neon-pink); font-size: 0.9rem; }
+        .note-item i { color: var(--neon-cyan); font-size: 1.1rem; }
+        
+        .note-item.alert {
+            color: var(--neon-cyan);
+            text-shadow: 0 0 10px rgba(0, 240, 255, 0.6);
+        }
 
         /* BUTTON (Centered perfectly) */
         .btn-confirmar {
@@ -717,11 +732,11 @@
     <div class="notes-area">
         <div class="note-item">
             <i class="fa-solid fa-user-group"></i>
-            <span>1 niño + 1 acompañante</span>
+            <span>Válido: 1 niño/a + 1 acompañante</span>
         </div>
-        <div class="note-item">
-            <i class="fa-solid fa-calendar-check"></i>
-            <span>Confirmar antes del 20 de Julio</span>
+        <div class="note-item alert">
+            <i class="fa-solid fa-triangle-exclamation" style="color: var(--neon-pink);"></i>
+            <span>¡Confirmar asistencia antes del 20 de Julio!</span>
         </div>
     </div>
 
